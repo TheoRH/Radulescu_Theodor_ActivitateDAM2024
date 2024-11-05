@@ -113,13 +113,13 @@
             android:orientation="horizontal">
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/radio_curat"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:text="DA" />
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/radio_murdar"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:text="NU" />

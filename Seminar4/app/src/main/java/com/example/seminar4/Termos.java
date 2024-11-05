@@ -1,6 +1,11 @@
 package com.example.seminar4;
 
-public class Termos {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
+public class Termos implements Parcelable {
     private String nume; //rez
     private int numar;//rez
     private String detalii;//rez
@@ -14,6 +19,26 @@ public class Termos {
         this.curat = curat;
         this.grade = grade;
     }
+
+    protected Termos(Parcel in) {
+        nume = in.readString();
+        numar = in.readInt();
+        detalii = in.readString();
+        curat = in.readByte() != 0;
+        grade = in.readFloat();
+    }
+
+    public static final Creator<Termos> CREATOR = new Creator<Termos>() {
+        @Override
+        public Termos createFromParcel(Parcel in) {
+            return new Termos(in);
+        }
+
+        @Override
+        public Termos[] newArray(int size) {
+            return new Termos[size];
+        }
+    };
 
     public String getNume() {
         return nume;
@@ -65,5 +90,21 @@ public class Termos {
         sb.append(", grade=").append(grade);
         sb.append('}');
         return sb.toString();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeString(nume);
+        dest.writeInt(numar);
+        dest.writeString(detalii);
+        dest.writeByte((byte)(curat?1:0));
+        dest.writeFloat(grade);
+
+
     }
 }
