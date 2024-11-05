@@ -1,4 +1,4 @@
-package com.example.seminar4;
+package com.example.seminar5;
 
 import static android.app.ProgressDialog.show;
 
@@ -8,11 +8,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;

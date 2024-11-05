@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.seminar4"
+    namespace = "com.example.seminar5"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.seminar4"
+        applicationId = "com.example.seminar5"
         minSdk = 23
         targetSdk = 34
         versionCode = 1

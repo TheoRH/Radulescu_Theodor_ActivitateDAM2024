@@ -1,10 +1,9 @@
-package com.example.seminar4;
+package com.example.seminar5;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TableRow;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -39,6 +38,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent it = new Intent(getApplicationContext(), ActivitateaTermos.class);
                 startActivityForResult(it,200);
+            }
+        });
+
+        Button btn2=findViewById(R.id.button3);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it= new Intent(getApplicationContext(), ActivityLista.class);
+                it.putParcelableArrayListExtra("termosList",termosList);
+                startActivity(it);
             }
         });
 
