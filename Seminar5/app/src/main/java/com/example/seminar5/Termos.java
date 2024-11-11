@@ -10,7 +10,7 @@ public class Termos implements Parcelable {
     private int numar;//rez
     private String detalii;//rez
     private boolean curat;//rez
-    private float grade;//rez
+    private float grade;
 
     public Termos(String nume, int numar, String detalii, boolean curat, float grade) {
         this.nume = nume;
