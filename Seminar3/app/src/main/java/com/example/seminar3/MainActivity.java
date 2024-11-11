@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
     }
     public void deschide(View view) {
         Intent it = new Intent(getApplicationContext(), MainActivity2.class);
