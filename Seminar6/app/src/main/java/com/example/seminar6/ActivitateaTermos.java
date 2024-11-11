@@ -1,4 +1,4 @@
-package com.example.seminar5;
+package com.example.seminar6;
 
 import static android.app.ProgressDialog.show;
 
@@ -18,8 +18,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.seminar5.R;
-
 public class ActivitateaTermos extends AppCompatActivity {
 
     @Override
@@ -32,7 +30,30 @@ public class ActivitateaTermos extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
 
+
+
         });
+
+        Intent it=getIntent();
+        if(it.hasExtra("termos")){
+            Termos termi=it.getParcelableExtra("termos");
+            EditText denumire = findViewById(R.id.editTextText2);
+            Spinner spin=findViewById(R.id.spinner2);
+            EditText detalii = findViewById(R.id.editTextText3);
+            RadioGroup rdg=findViewById(R.id.rGROUP);
+            RatingBar rtg=findViewById(R.id.ratingBar);
+
+            denumire.setText(termi.getNume());
+            spin.setSelection(termi.getNumar()-1);
+            detalii.setText(termi.getDetalii());
+            if(termi.isCurat()==true)
+            {
+                rdg.check(R.id.radio_curat);
+            }
+            else
+                rdg.check(R.id.radio_murdar);
+            rtg.setRating(termi.getGrade()-30);
+        }
 
         Button btnTermos = findViewById(R.id.button2);
         btnTermos.setOnClickListener(new View.OnClickListener() {
