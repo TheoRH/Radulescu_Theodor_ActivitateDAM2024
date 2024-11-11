@@ -22,6 +22,7 @@ public class MainActivity2 extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
        Intent it=getIntent();
         String text = it.getStringExtra("text");
         int valoare1=it.getIntExtra("numar1",0);
