@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/button"
+    android:title="@string/adauga_un_termos_nou"/>
+    <item
+        android:id="@+id/button3"
+        android:title="@string/lista"
+        />
+    <item
+        android:id="@+id/button4"
+        android:title="@string/imagini_termos"/>
+    <item
+        android:id="@+id/button5"
+        android:title="@string/json_ase_menu"></item>
+    <item
+        android:id="@+id/button6"
+        android:title="@string/accuweather"></item>
+</menu>

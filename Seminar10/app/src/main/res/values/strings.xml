@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Seminar10</string>
+    <string name="catre_universul_termosurilor">Catre universul termosurilor!</string>
+    <string name="adauga_un_termos_nou">Adauga un termos nou</string>
+    <string name="denumire_termos">Denumire termos</string>
+    <string name="al_catelea_termos_este">Al catelea termos este?</string>
+    <string name="detalii_termos">Detalii termos</string>
+    <string name="curat">Curat?</string>
+    <string name="cate_grade">Cate grade?</string>
+    <string name="lista_de_termosuri">Lista de termosuri:</string>
+    <string name="numarul_termosului_este">numarul termosului este:</string>
+    <string name="este_curat">Este curat?</string>
+    <string name="lista">Lista</string>
+    <string name="imagini_termos">Imagini Termos</string>
+    <string name="oras">Oras:</string>
+    <string name="json_ase_menu"><![CDATA[JSON ASE]]></string>
+    <string name="accuweather">AccuWeather</string>
+</resources>
