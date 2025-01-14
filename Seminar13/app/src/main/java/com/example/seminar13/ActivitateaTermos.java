@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
@@ -18,6 +19,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.google.firebase.Firebase;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -77,6 +82,7 @@ public class ActivitateaTermos extends AppCompatActivity {
                 RadioGroup rdg=findViewById(R.id.rGROUP);
                 RatingBar rtg=findViewById(R.id.ratingBar);
                 int selectedID=rdg.getCheckedRadioButtonId();
+                CheckBox chk = findViewById(R.id.checkboxFireBase);
 
                 int alesSpin= Integer.parseInt(spin.getSelectedItem().toString());
                 String denumireString=denumire.getText().toString();
@@ -96,6 +102,13 @@ public class ActivitateaTermos extends AppCompatActivity {
                 });
 
                 Log.d("#obiect",t1.toString());
+
+                if(chk.isChecked()) {
+                    FirebaseDatabase databaseFire = FirebaseDatabase.getInstance("https://seminar13-934c8-default-rtdb.europe-west1.firebasedatabase.app/");
+                    DatabaseReference myRef = databaseFire.getReference("termosuri");
+                    DatabaseReference child = myRef.child(t1.getKey());
+                    child.setValue(t1);
+                }
 
                 Intent intent = new Intent();
                 intent.putExtra("termos",t1);

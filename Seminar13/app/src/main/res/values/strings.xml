@@ -15,4 +15,5 @@
     <string name="oras">Oras:</string>
     <string name="json_ase_menu"><![CDATA[JSON ASE]]></string>
     <string name="accuweather">AccuWeather</string>
+    <string name="firebase">FireBase</string>
 </resources>

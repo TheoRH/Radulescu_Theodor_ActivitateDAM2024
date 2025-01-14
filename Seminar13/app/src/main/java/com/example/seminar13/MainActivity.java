@@ -2,6 +2,7 @@ package com.example.seminar13;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +17,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.google.firebase.Firebase;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -74,6 +82,24 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        //Verificare citire FireBase
+
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://seminar13-934c8-default-rtdb.europe-west1.firebasedatabase.app/");
+        DatabaseReference myref = firebaseDatabase.getReference("termosuri");
+
+        myref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                Toast.makeText(MainActivity.this, "Modificare noua: ", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(MainActivity.this, "Eroare la citire din firebase", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         Toolbar toolbar1 = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar1);
 
@@ -120,6 +146,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(getApplicationContext(),VizualizareSharedPreferences.class);
+                startActivity(it);
+            }
+        });
+
+        Button btn7 = findViewById(R.id.button7);
+        btn7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(getApplicationContext(), VizualizareFirebase.class);
                 startActivity(it);
             }
         });
